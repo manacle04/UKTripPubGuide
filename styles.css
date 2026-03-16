@@ -74,18 +74,7 @@ body::before {
 }
 
 .bunting-backdrop {
-  position: absolute;
-  inset: -4px -18px auto auto;
-  width: min(30vw, 170px);
-  aspect-ratio: 0.78;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 55%, transparent 72%);
-  opacity: 0.1;
-  filter: none;
-  mix-blend-mode: normal;
-  box-shadow: none;
-  pointer-events: none;
+  display: none;
 }
 
 .brand-bar {
@@ -512,9 +501,7 @@ h2 {
   padding: 16px 18px 18px;
   border: 1px solid rgba(98, 88, 79, 0.12);
   border-radius: var(--radius-md);
-  background:
-    linear-gradient(145deg, rgba(30, 64, 43, 0.98), rgba(21, 46, 31, 0.96)),
-    var(--surface);
+  background: rgba(21, 52, 33, 0.98);
   box-shadow: var(--shadow);
 }
 
