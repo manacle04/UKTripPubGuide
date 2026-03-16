@@ -28,16 +28,16 @@ const cityContent = {
       {
         name: "Black Swan",
         address: "Oxford",
-        note: "Usually dead unless soccer is on. Your note says it has a dart board, but I have not independently verified that one yet.",
+        note: "Usually dead unless soccer is on. Oxford Pub Guide specifically calls this one out as Irish with a good Guinness.",
         distance: "Within 1km",
-        tags: ["featured"],
+        tags: ["featured", "good guinness"],
       },
       {
         name: "Half Moon",
         address: "Oxford",
-        note: "Open latest during the week.",
+        note: "Open latest during the week. Oxford Pub Guide specifically rates this one as having excellent Guinness.",
         distance: "Within 1km",
-        tags: ["featured"],
+        tags: ["featured", "good guinness"],
       },
       {
         name: "Glamorous",
@@ -677,6 +677,10 @@ function titleCase(tag) {
     return "★ Dope Spot ★";
   }
 
+  if (tag === "recommended") {
+    return "";
+  }
+
   return tag
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -701,6 +705,22 @@ function getFilterMarkup(filter) {
       <span>Guinness</span>
     </span>
   `;
+}
+
+function getTagMarkup(tag) {
+  if (tag === "good guinness") {
+    return `
+      <span class="guinness-filter" aria-label="Guinness">
+        <svg viewBox="0 0 32 40" aria-hidden="true">
+          <path d="M16 2 C18 7 22 8 26 8 C24 11 22 12 22 17 V29 C22 34 19 38 16 38 C13 38 10 34 10 29 V17 C10 12 8 11 6 8 C10 8 14 7 16 2 Z" fill="#c79a2b" stroke="#101010" stroke-width="2" />
+          <path d="M17 10 C18 14 20 17 23 18" fill="none" stroke="#fff7e2" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <span>Guinness</span>
+      </span>
+    `;
+  }
+
+  return titleCase(tag);
 }
 
 function getGoogleMapsLink(spot) {
@@ -946,9 +966,13 @@ function renderSpots() {
 
     const tagRow = card.querySelector(".tag-row");
     spot.tags.forEach((tag) => {
+      if (tag === "recommended") {
+        return;
+      }
+
       const tagEl = document.createElement("span");
       tagEl.className = `tag tag-${getTagSlug(tag)}`;
-      tagEl.textContent = titleCase(tag);
+      tagEl.innerHTML = getTagMarkup(tag);
       tagRow.appendChild(tagEl);
     });
 

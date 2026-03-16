@@ -580,14 +580,23 @@ h2 {
   font-weight: 800;
 }
 
+.tag .guinness-filter {
+  gap: 6px;
+}
+
+.tag .guinness-filter svg {
+  width: 13px;
+  height: 18px;
+}
+
+.tag .guinness-filter span {
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
 .tag-featured {
   background: #f3d56b;
   color: #1a1406;
-}
-
-.tag-recommended {
-  background: #2f2613;
-  color: #f3d56b;
 }
 
 .tag-darts {
