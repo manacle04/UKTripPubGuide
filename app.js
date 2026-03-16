@@ -441,10 +441,10 @@ const cityContent = {
       {
         name: "Hope & Anchor",
         address: "Maryland Street, Liverpool L1 9DE",
-        note: "CAMRA says the games area includes three pool tables, so this is one of the strongest pool picks in Liverpool.",
+        note: "CAMRA says the games area includes three pool tables, and student nightlife coverage also calls out a dart board here.",
         distance: "Verified pool spot",
-        tags: ["recommended", "pool", "good food"],
-        proofLabel: "See pool proof",
+        tags: ["recommended", "pool", "darts", "good food"],
+        proofLabel: "Games proof",
         proofUrl: "https://whatpub.com/pubs/MER/398/hope-anchor-liverpool",
       },
       {
@@ -489,9 +489,9 @@ const cityContent = {
       {
         name: "The Vines",
         address: "81 Lime Street, Liverpool L1 1JQ",
-        note: "Also known as the Big House. One of the great historic show pubs of Liverpool with a huge, ornate interior.",
+        note: "Also known as the Big House. One of Liverpool's great show pubs, and it keeps coming up in local best-Guinness conversations.",
         distance: "Showpiece pub",
-        tags: ["recommended"],
+        tags: ["recommended", "good guinness"],
       },
       {
         name: "Pen Factory",
@@ -524,9 +524,9 @@ const cityContent = {
       {
         name: "The Bridewell",
         address: "1 Campbell Square, Liverpool L1 5FB",
-        note: "Award-winning converted Victorian gaol pub with seating in old cells, within walking distance of the waterfront and arena.",
+        note: "Award-winning converted Victorian gaol pub with seating in old cells. VisitLiverpool specifically recommends it for a strong pint of Guinness.",
         distance: "Short walk to arena",
-        tags: ["recommended"],
+        tags: ["recommended", "good guinness"],
       },
       {
         name: "White Hart",
@@ -534,6 +534,13 @@ const cityContent = {
         note: "Good Hope Street pub for a pre-event pint, with real ale, sports TV, and a solid pub feel.",
         distance: "Hope Street option",
         tags: ["recommended"],
+      },
+      {
+        name: "The Monro",
+        address: "92 Duke Street, Liverpool L1 5AG",
+        note: "Liverpool Echo readers voted this one among the city's best Guinness pours, and it regularly shows up in Liverpool Guinness roundups.",
+        distance: "Duke Street",
+        tags: ["recommended", "good guinness", "good food"],
       },
     ],
   },
@@ -636,6 +643,7 @@ const spotAreas = {
     "The Pump House": "Albert Dock",
     "The Bridewell": "Campbell Square",
     "White Hart": "Hope Street",
+    "The Monro": "Duke Street",
   },
 };
 
