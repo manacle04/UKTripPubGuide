@@ -2,15 +2,17 @@
 
 A mobile-first pub guide for London, Oxford, and Liverpool.
 
+Static site for trip planning and pub-finding.
+
 ## Files To Upload
 
-Upload the full contents of this folder to your GitHub repository, including:
+Upload these repo-root files to GitHub:
 
 - `index.html`
 - `styles.css`
 - `app.js`
-- `uktrippubguide/`
 - `.nojekyll`
+- `README.md`
 
 ## GitHub Pages
 
@@ -22,13 +24,15 @@ After uploading to GitHub:
 4. Select your main branch and `/ (root)`.
 5. Save.
 
-Your site will then be available from GitHub Pages, and the root page will redirect to:
+Your site will then be available from GitHub Pages at the repo root.
 
-- `/uktrippubguide/`
+## Clean Repo Structure
+
+The site now runs entirely from the repo root.
+You do not need any extra subfolders for deployment.
 
 ## Local Preview
 
 Current local preview:
 
-- `http://localhost:4173/uktrippubguide/`
-
+- `http://localhost:4173/`

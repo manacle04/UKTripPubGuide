@@ -1203,6 +1203,7 @@ function render() {
   renderFilterButtons();
 
   const isGuide = state.mode === "guide";
+  document.body.classList.toggle("itinerary-mode", !isGuide);
   guideView.classList.toggle("hidden-view", !isGuide);
   citySection.classList.toggle("hidden-view", !isGuide);
   itineraryView.classList.toggle("hidden-view", isGuide);

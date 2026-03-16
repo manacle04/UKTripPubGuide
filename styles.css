@@ -690,6 +690,29 @@ h2 {
   display: none;
 }
 
+body.itinerary-mode .brand-bar,
+body.itinerary-mode .hero-copy {
+  display: none;
+}
+
+body.itinerary-mode {
+  padding-top: 64px;
+}
+
+body.itinerary-mode .hero {
+  padding-top: 0;
+}
+
+body.itinerary-mode .hero-meta {
+  margin-top: 0;
+}
+
+@media (min-width: 720px) {
+  body.itinerary-mode {
+    padding-top: 72px;
+  }
+}
+
 .spot-card {
   position: relative;
   overflow: hidden;
