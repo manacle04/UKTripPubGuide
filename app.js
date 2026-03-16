@@ -168,9 +168,9 @@ const cityContent = {
       {
         name: "The Bear Inn",
         address: "6 Alfred Street, Oxford OX1 4EH",
-        note: "Oxford's oldest pub, right in the historic centre, with a strong classic-pub feel and a food-and-drink menu online.",
+        note: "Oxford's oldest pub, right in the historic centre, with a strong classic-pub feel. Local Oxford pub guides also regularly single it out for Guinness.",
         distance: "Popular online pick",
-        tags: ["recommended", "good food"],
+        tags: ["recommended", "good food", "good guinness"],
       },
       {
         name: "The Grapes",
@@ -965,10 +965,9 @@ function renderSpots() {
     card.querySelector(".map-link").href = getGoogleMapsLink(spot);
 
     const tagRow = card.querySelector(".tag-row");
-    spot.tags.forEach((tag) => {
-      if (tag === "recommended") {
-        return;
-      }
+    const visibleTags = spot.tags.filter((tag) => tag !== "recommended");
+
+    visibleTags.forEach((tag) => {
 
       const tagEl = document.createElement("span");
       tagEl.className = `tag tag-${getTagSlug(tag)}`;
