@@ -403,6 +403,34 @@ const cityContent = {
         proofLabel: "Games proof",
         proofUrl: "https://whatpub.com/pubs/NLD/6207/neds-bar-london",
       },
+      {
+        name: "Pride of Paddington",
+        address: "1-3 Craven Road, London W2 3BP",
+        note: "Lively Paddington Station pub with rooftop space and classic pub food, only a short walk from Paddington Square.",
+        distance: "Paddington Square nearby",
+        tags: ["recommended", "good food"],
+      },
+      {
+        name: "Sawyers Arms",
+        address: "8 London Street, London W2 1HL",
+        note: "Reliable Paddington local just north of the station, known for easy pints and straightforward British pub grub.",
+        distance: "Paddington Square nearby",
+        tags: ["recommended", "good food"],
+      },
+      {
+        name: "The Bear",
+        address: "8 Norfolk Place, London W2 1QL",
+        note: "Fuller's pub a few minutes from Paddington Square with a polished beer list and proper pub menu.",
+        distance: "Paddington Square nearby",
+        tags: ["recommended", "good food"],
+      },
+      {
+        name: "The Cleveland Arms",
+        address: "28 Chilworth Street, London W2 6DT",
+        note: "Well-liked Paddington gastropub tucked into a quieter street, with stronger food than most station-side options.",
+        distance: "Paddington Square nearby",
+        tags: ["recommended", "good food"],
+      },
     ],
   },
   Liverpool: {
@@ -593,6 +621,10 @@ const spotAreas = {
     "Le Wouri": "Woolwich",
     "Bricklayers Arms": "West Norwood",
     "Ned's Bar": "Kingsbury",
+    "Pride of Paddington": "Paddington",
+    "Sawyers Arms": "Paddington",
+    "The Bear": "Paddington",
+    "The Cleveland Arms": "Paddington",
   },
   Oxford: {
     "The Fir Tree": "Iffley Road",
@@ -648,18 +680,114 @@ const spotAreas = {
 };
 
 const filters = [
-  { key: "featured", label: "Dope Spots (Our Picks)" },
-  { key: "darts", label: "Darts" },
+  { key: "featured", label: "★ Dope Spot ★" },
+  { key: "darts", label: "Dartboard" },
   { key: "pool", label: "Pool Table" },
-  { key: "good guinness", label: "Good Guinness" },
+  { key: "good guinness", label: "Guinness" },
   { key: "good food", label: "Good Food" },
 ];
 
+const modes = [
+  { key: "guide", label: "Pub Guide" },
+  { key: "itinerary", label: "Trip Itinerary" },
+];
+
+const itineraryDays = [
+  {
+    date: "Friday, April 17",
+    city: "London",
+    items: ["Flight"],
+  },
+  {
+    date: "Saturday, April 18",
+    city: "London",
+    items: [
+      "Buckingham Palace",
+      "Changing of the Guard at 10:45",
+      "Westminster Abbey",
+      "Big Ben",
+      "London Eye / river cruise",
+      "Power nap",
+      "Savoy Grill (Gordon Ramsay restaurant, beef Wellington)",
+    ],
+  },
+  {
+    date: "Sunday, April 19",
+    city: "London",
+    items: ["Sunday roast at Blacklock"],
+  },
+  {
+    date: "Monday, April 20",
+    city: "London",
+    items: ["Notting Hill market"],
+  },
+  {
+    date: "Tuesday, April 21",
+    city: "London > Oxford",
+    items: ["Bus from London", "Bars near Cesario", "Soccer match", "Late night at Half Moon and Glamorous"],
+  },
+  {
+    date: "Wednesday, April 22",
+    city: "Oxford",
+    items: [
+      "Punting",
+      "Day bars near Cesario, then finish in town",
+      "Maybe drunk museum drop-in",
+      "Flight Club",
+      "Walk around town",
+      "Late night in town",
+    ],
+  },
+  {
+    date: "Thursday, April 23",
+    city: "Oxford > Liverpool",
+    items: ["Pick up rental car", "Drive to Liverpool", "Darts match"],
+  },
+  {
+    date: "Friday, April 24",
+    city: "Liverpool",
+    items: ["Beatles Museum", "Cavern Club"],
+  },
+  {
+    date: "Saturday, April 25",
+    city: "Liverpool > Oxford",
+    items: ["Crown Hotel", "Drive from Liverpool", "Drop off rental car", "Bar to watch soccer"],
+  },
+  {
+    date: "Sunday, April 26",
+    city: "Oxford > London",
+    items: ["Bus to airport", "Flight home"],
+  },
+];
+
+const itineraryMapQueries = {
+  "Buckingham Palace": "Buckingham Palace, London SW1A 1AA, UK",
+  "Changing of the Guard at 10:45": "Buckingham Palace, London SW1A 1AA, UK",
+  "Westminster Abbey": "Westminster Abbey, Dean's Yard, London SW1P 3PA, UK",
+  "Big Ben": "Big Ben, London SW1A 0AA, UK",
+  "London Eye / river cruise": "London Eye, Riverside Building, County Hall, London SE1 7PB, UK",
+  "Savoy Grill (Gordon Ramsay restaurant, beef Wellington)":
+    "Savoy Grill, The Savoy, Strand, London WC2R 0EZ, UK",
+  "Sunday roast at Blacklock": "Blacklock Soho, 24 Great Windmill Street, London W1D 7LG, UK",
+  "Notting Hill market": "Portobello Road Market, London W11 1LJ, UK",
+  "Soccer match": "Kassam Stadium, Grenoble Road, Oxford OX4 4XP, UK",
+  "Late night at Half Moon and Glamorous": "Half Moon, 17-18 St Clement's Street, Oxford OX4 1AB, UK",
+  Punting: "Magdalen Bridge Boathouse, High Street, Oxford OX1 4AU, UK",
+  "Maybe drunk museum drop-in": "Oxford University Museum of Natural History, Parks Road, Oxford OX1 3PW, UK",
+  "Flight Club": "Flight Club Oxford, Westgate Centre, Oxford OX1 1NZ, UK",
+  "Beatles Museum": "The Beatles Story Museum, Britannia Vaults, Albert Dock, Liverpool L3 4AD, UK",
+  "Cavern Club": "Cavern Club, 10 Mathew Street, Liverpool L2 6RE, UK",
+};
+
 const state = {
+  mode: "guide",
   city: "London",
   activeFilters: new Set(),
 };
 
+const modeTabs = document.querySelector("#modeTabs");
+const cityLabel = document.querySelector("#cityLabel");
+const vibeLabel = document.querySelector("#vibeLabel");
 const cityTabs = document.querySelector("#cityTabs");
 const filterBar = document.querySelector("#filterBar");
 const resultsSummary = document.querySelector("#resultsSummary");
@@ -670,6 +798,10 @@ const sectionCopy = document.querySelector("#sectionCopy");
 const spotGrid = document.querySelector("#spotGrid");
 const spotCardTemplate = document.querySelector("#spotCardTemplate");
 const mapCards = document.querySelectorAll("[data-city-map]");
+const guideView = document.querySelector("#guideView");
+const citySection = document.querySelector("#citySection");
+const itineraryView = document.querySelector("#itineraryView");
+const itineraryGrid = document.querySelector("#itineraryGrid");
 const mapState = {};
 
 function titleCase(tag) {
@@ -679,6 +811,14 @@ function titleCase(tag) {
 
   if (tag === "recommended") {
     return "";
+  }
+
+  if (tag === "darts") {
+    return "Dartboard";
+  }
+
+  if (tag === "pool") {
+    return "Pool Table";
   }
 
   return tag
@@ -726,6 +866,15 @@ function getTagMarkup(tag) {
 function getGoogleMapsLink(spot) {
   const query = encodeURIComponent(`${spot.name}, ${spot.address}`);
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
+}
+
+function getItineraryMapsLink(item) {
+  const query = itineraryMapQueries[item];
+  if (!query) {
+    return null;
+  }
+
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function getSpotArea(city, spot) {
@@ -808,10 +957,15 @@ function createMap() {
     const map = window.L.map(element, {
       zoomControl: false,
       scrollWheelZoom: false,
+      preferCanvas: true,
     }).setView(config.center, config.zoom);
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors",
+      detectRetina: true,
+      maxZoom: 19,
+      tileSize: 256,
+      zoomOffset: 0,
     }).addTo(map);
 
     window.L.control
@@ -824,6 +978,23 @@ function createMap() {
       map,
       markers: [],
     };
+  });
+}
+
+function renderModeTabs() {
+  modeTabs.innerHTML = "";
+
+  modes.forEach((mode) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `pill-button mode-button ${mode.key === state.mode ? "active" : ""}`;
+    button.textContent = mode.label;
+    button.setAttribute("aria-pressed", String(mode.key === state.mode));
+    button.addEventListener("click", () => {
+      state.mode = mode.key;
+      render();
+    });
+    modeTabs.appendChild(button);
   });
 }
 
@@ -918,6 +1089,53 @@ function renderFilterButtons() {
   });
 }
 
+function renderItinerary() {
+  itineraryGrid.innerHTML = "";
+
+  itineraryDays.forEach((day) => {
+    const card = document.createElement("article");
+    card.className = "itinerary-card";
+    card.innerHTML = `
+      <div class="itinerary-card-head">
+        <div>
+          <p class="itinerary-date">${day.date}</p>
+          <h3>${day.city}</h3>
+        </div>
+        <div class="itinerary-badge" aria-hidden="true">${day.city}</div>
+      </div>
+    `;
+
+    const list = document.createElement("ul");
+    list.className = "itinerary-list";
+
+    day.items.forEach((item) => {
+      const li = document.createElement("li");
+      li.className = "itinerary-item";
+
+      const text = document.createElement("span");
+      text.className = "itinerary-item-text";
+      text.textContent = item;
+      li.appendChild(text);
+
+      const mapsLink = getItineraryMapsLink(item);
+      if (mapsLink) {
+        const link = document.createElement("a");
+        link.className = "itinerary-map-link";
+        link.href = mapsLink;
+        link.target = "_blank";
+        link.rel = "noreferrer noopener";
+        link.textContent = "Google Maps";
+        li.appendChild(link);
+      }
+
+      list.appendChild(li);
+    });
+
+    card.appendChild(list);
+    itineraryGrid.appendChild(card);
+  });
+}
+
 function getVisibleSpots() {
   const currentSpots = cityContent[state.city].spots;
 
@@ -980,10 +1198,27 @@ function renderSpots() {
 }
 
 function render() {
+  renderModeTabs();
   renderCityTabs();
   renderFilterButtons();
-  renderMaps();
-  renderSpots();
+
+  const isGuide = state.mode === "guide";
+  guideView.classList.toggle("hidden-view", !isGuide);
+  citySection.classList.toggle("hidden-view", !isGuide);
+  itineraryView.classList.toggle("hidden-view", isGuide);
+  cityTabs.style.display = isGuide ? "flex" : "none";
+  filterBar.style.display = isGuide ? "flex" : "none";
+  cityLabel.style.display = isGuide ? "block" : "none";
+  vibeLabel.style.display = isGuide ? "block" : "none";
+  resultsSummary.style.display = isGuide ? "block" : "none";
+  clearFiltersButton.style.display = isGuide ? "inline-flex" : "none";
+
+  if (isGuide) {
+    renderMaps();
+    renderSpots();
+  } else {
+    renderItinerary();
+  }
 }
 
 clearFiltersButton.addEventListener("click", () => {

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2a0f18" />
     <title>UK Trip Pub Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,9 +22,11 @@
   <body>
     <div class="controls-shell">
       <section class="controls" aria-label="Trip pub filters">
-        <p class="control-label">City</p>
+        <p class="control-label">Mode</p>
+        <div class="mode-tabs" id="modeTabs" aria-label="View mode"></div>
+        <p class="control-label" id="cityLabel">City</p>
         <div class="city-tabs" id="cityTabs" role="tablist" aria-label="Cities"></div>
-        <p class="control-label">Vibe</p>
+        <p class="control-label" id="vibeLabel">Vibe</p>
         <div class="filter-bar" id="filterBar" aria-label="Filters"></div>
         <div class="results-meta">
           <p id="resultsSummary">Loading spots...</p>
@@ -57,6 +60,16 @@
                 />
                 <span>Oxford United</span>
               </div>
+              <div class="sponsor-logo-card sponsor-pdc-card" aria-label="PDC sponsor">
+                <span class="sponsor-pdc-badge" aria-hidden="true">
+                  <svg class="sponsor-pdc-logo" viewBox="0 0 240 132" role="img" aria-hidden="true">
+                    <rect x="2" y="2" width="236" height="128" rx="18" fill="#ffffff" />
+                    <ellipse cx="120" cy="66" rx="78" ry="36" fill="none" stroke="#0b68be" stroke-width="8" />
+                    <text x="60" y="85" fill="#ef2b24" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="900">PDC</text>
+                  </svg>
+                </span>
+                <span>Professional Darts Corporation</span>
+              </div>
               <div class="sponsor-icon-card" aria-label="Beer pint sponsor">
                 <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
                   <path d="M20 20 h18 a5 5 0 0 1 5 5 v19 a9 9 0 0 1 -9 9 h-10 a9 9 0 0 1 -9 -9 v-19 a5 5 0 0 1 5 -5 z" fill="#e0aa1f" stroke="#f8e7b2" stroke-width="2" />
@@ -71,7 +84,7 @@
       </header>
 
       <main>
-        <section class="maps-section" aria-label="City maps">
+        <section class="maps-section" id="guideView" aria-label="City maps">
           <div class="section-heading maps-heading">
             <div>
               <p class="section-kicker">Maps</p>
@@ -118,7 +131,25 @@
 
           <div class="card-grid" id="spotGrid" aria-live="polite"></div>
         </section>
+
+        <section class="itinerary-section hidden-view" id="itineraryView" aria-label="Trip itinerary">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Trip plan</p>
+              <h2>Itinerary</h2>
+            </div>
+            <p class="section-copy">
+              The full April run from London to Oxford to Liverpool, laid out day by day.
+            </p>
+          </div>
+
+          <div class="itinerary-grid" id="itineraryGrid"></div>
+        </section>
       </main>
+
+      <footer class="page-footer">
+        <p>Thank you to our sponsors.</p>
+      </footer>
     </div>
 
     <template id="spotCardTemplate">
