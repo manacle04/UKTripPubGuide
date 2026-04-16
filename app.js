@@ -1316,7 +1316,12 @@ function createMap() {
 
     mapState[city] = {
       map,
-      markers: [],
+      markersByMode: {
+        guide: [],
+        coffee: [],
+      },
+      loadedModes: new Set(),
+      loadingModes: new Set(),
     };
   });
 }
@@ -1342,42 +1347,80 @@ function renderModeTabs() {
   });
 }
 
-async function populateMaps() {
+function getMapModeKey() {
+  return state.mode === "coffee" ? "coffee" : "guide";
+}
+
+function getMapSpots(city, modeKey) {
+  return modeKey === "coffee" ? getCoffeeSpots(city) : getPubSpots(city);
+}
+
+function setActiveMarkers(city, modeKey) {
+  const mapEntry = mapState[city];
+  if (!mapEntry) {
+    return;
+  }
+
+  Object.entries(mapEntry.markersByMode).forEach(([key, markers]) => {
+    markers.forEach((marker) => {
+      if (key === modeKey) {
+        marker.addTo(mapEntry.map);
+      } else {
+        marker.remove();
+      }
+    });
+  });
+}
+
+function fitMapToMode(city, modeKey) {
+  const mapEntry = mapState[city];
+  if (!mapEntry) {
+    return;
+  }
+
+  const markers = mapEntry.markersByMode[modeKey] || [];
+  const bounds = markers.map((marker) => marker.getLatLng());
+
+  if (bounds.length) {
+    mapEntry.map.fitBounds(bounds, {
+      padding: [24, 24],
+      maxZoom: cityMapConfig[city].zoom + 1,
+    });
+  } else {
+    mapEntry.map.setView(cityMapConfig[city].center, cityMapConfig[city].zoom);
+  }
+}
+
+async function ensureMapsPopulated(modeKey = getMapModeKey()) {
   for (const city of cityOrder) {
     const mapEntry = mapState[city];
-    if (!mapEntry) {
+    if (!mapEntry || mapEntry.loadedModes.has(modeKey) || mapEntry.loadingModes.has(modeKey)) {
       continue;
     }
 
-    mapEntry.markers.forEach((marker) => marker.remove());
-    mapEntry.markers = [];
+    mapEntry.loadingModes.add(modeKey);
+    const spots = getMapSpots(city, modeKey);
+    const points = await Promise.all(
+      spots.map(async (spot, index) => {
+        try {
+          return (await geocodeSpot(city, spot)) || getFallbackPoint(city, index);
+        } catch (error) {
+          console.error(`Unable to geocode ${spot.name}`, error);
+          return getFallbackPoint(city, index);
+        }
+      }),
+    );
 
-    const bounds = [];
-    const spots = state.mode === "coffee" ? getCoffeeSpots(city) : getPubSpots(city);
-
-    for (const [index, spot] of spots.entries()) {
-      try {
-        const point = (await geocodeSpot(city, spot)) || getFallbackPoint(city, index);
-
-        const marker = window.L.marker([point.lat, point.lon], {
-          icon: createDotMarker(),
-        }).addTo(mapEntry.map);
-        marker.bindPopup(buildPopupHtml(spot));
-        mapEntry.markers.push(marker);
-        bounds.push([point.lat, point.lon]);
-      } catch (error) {
-        console.error(`Unable to geocode ${spot.name}`, error);
-      }
-    }
-
-    if (bounds.length) {
-      mapEntry.map.fitBounds(bounds, {
-        padding: [24, 24],
-        maxZoom: cityMapConfig[city].zoom + 1,
+    mapEntry.markersByMode[modeKey] = points.map((point, index) => {
+      const marker = window.L.marker([point.lat, point.lon], {
+        icon: createDotMarker(),
       });
-    } else {
-      mapEntry.map.setView(cityMapConfig[city].center, cityMapConfig[city].zoom);
-    }
+      marker.bindPopup(buildPopupHtml(spots[index]));
+      return marker;
+    });
+
+    mapEntry.loadingModes.delete(modeKey);
+    mapEntry.loadedModes.add(modeKey);
   }
 }
 
@@ -1400,10 +1443,18 @@ function renderCityTabs() {
 }
 
 function renderMaps() {
+  const modeKey = getMapModeKey();
+
   mapCards.forEach((card) => {
     const isActive = card.dataset.cityMap === state.city;
     card.classList.toggle("active", isActive);
   });
+
+  cityOrder.forEach((city) => {
+    setActiveMarkers(city, modeKey);
+  });
+
+  fitMapToMode(state.city, modeKey);
 
   const activeMap = mapState[state.city]?.map;
   if (activeMap) {
@@ -1670,7 +1721,9 @@ function render() {
   if (isGuide || isCoffee) {
     renderMaps();
     renderSpots();
-    populateMaps();
+    ensureMapsPopulated(getMapModeKey()).then(() => {
+      renderMaps();
+    });
   } else if (isItinerary) {
     renderItinerary();
   } else {
@@ -1689,4 +1742,6 @@ if (randomizerSpin) {
 
 render();
 createMap();
-populateMaps();
+ensureMapsPopulated("guide").then(() => {
+  renderMaps();
+});
