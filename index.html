@@ -145,6 +145,41 @@
 
           <div class="itinerary-grid" id="itineraryGrid"></div>
         </section>
+
+        <section class="randomizer-section hidden-view" id="randomizerView" aria-label="Pub randomizer">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">Night picker</p>
+              <h2>Pub Randomizer</h2>
+            </div>
+            <p class="section-copy">
+              Spin the wheel for a city-specific pub pick when the group cannot decide.
+            </p>
+          </div>
+
+          <div class="randomizer-shell">
+            <div class="randomizer-wheel-wrap">
+              <div class="randomizer-pointer" aria-hidden="true"></div>
+              <div class="randomizer-wheel" id="randomizerWheel">
+                <div class="randomizer-wheel-center">Spin</div>
+              </div>
+            </div>
+
+            <div class="randomizer-panel">
+              <p class="randomizer-city" id="randomizerCity">London</p>
+              <h3 class="randomizer-result" id="randomizerResult">Tap spin for a pub pick.</h3>
+              <p class="randomizer-note" id="randomizerNote">
+                The wheel only uses pub and bar spots from the selected city.
+              </p>
+              <div class="randomizer-actions">
+                <button class="randomizer-spin-button" id="randomizerSpin" type="button">Spin the Wheel</button>
+                <a class="randomizer-map-link hidden-view" id="randomizerMapLink" target="_blank" rel="noreferrer noopener">
+                  Open Pick in Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="page-footer">

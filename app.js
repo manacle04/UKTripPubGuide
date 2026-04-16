@@ -166,6 +166,55 @@ const cityContent = {
         tags: ["featured", "good food"],
       },
       {
+        name: "Missing Bean",
+        address: "14 Turl Street, Oxford OX1 3DQ",
+        note: "Oxford specialty-coffee institution right in the centre, with house-roasted coffee and pastries.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Jericho Coffee Traders",
+        address: "105 High Street, Oxford OX1 4BW",
+        note: "One of Oxford's best-known specialty coffee names, with a flagship High Street espresso bar.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Society Cafe",
+        address: "12-16 St Michael's Street, Oxford OX1 2DU",
+        note: "Popular central Oxford cafe with strong espresso, brunch energy, and plenty of regulars.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Common Ground",
+        address: "37-38 Little Clarendon Street, Oxford OX1 2HU",
+        note: "Jericho coffee and community hangout serving Oxford-roasted beans in a calm daytime space.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "NewGround Coffee",
+        address: "6 Ship Street, Oxford OX1 3DE",
+        note: "Ethical specialty coffee spot in the centre with a café-and-wine-bar feel.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Queen's Lane Coffee House",
+        address: "40 High Street, Oxford OX1 4AP",
+        note: "Historic Oxford coffee house right on the High Street, easy to hit while walking the centre.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Jericho Coffee Traders Roastery",
+        address: "Oxford Eco Centre, Roger House, Osney Mead, Oxford OX2 0ES",
+        note: "A bigger roastery café option if you're heading out toward Osney and want a more coffee-first stop.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
         name: "The Bear Inn",
         address: "6 Alfred Street, Oxford OX1 4EH",
         note: "Oxford's oldest pub, right in the historic centre, with a strong classic-pub feel. Local Oxford pub guides also regularly single it out for Guinness.",
@@ -431,6 +480,128 @@ const cityContent = {
         distance: "Paddington Square nearby",
         tags: ["recommended", "good food"],
       },
+      {
+        name: "The Cheese Barge",
+        address: "Paddington Central, South Wharf Road, London W2 1NW",
+        note: "User-added London stop: floating cheese-focused barge restaurant near Paddington with wine, plates, and canal energy.",
+        distance: "New user addition",
+        tags: ["featured", "good food"],
+      },
+      {
+        name: "The Waterway",
+        address: "54 Formosa Street, London W9 2JU",
+        note: "User-added canal-side London pick with a roomy terrace and easy Maida Vale/Paddington session vibe.",
+        distance: "New user addition",
+        tags: ["featured", "good food"],
+        mapsUrl: "https://maps.app.goo.gl/3csmCEHP1h4wJ7US8?g_st=iw",
+      },
+      {
+        name: "Post Work Pub",
+        address: "London",
+        note: "User-added London pub stop from your latest note.",
+        distance: "New user addition",
+        tags: ["featured"],
+        mapsUrl: "https://share.google/7g0Tm86PhMVrhvINp",
+      },
+      {
+        name: "Coffee / Gelato Stop",
+        address: "London",
+        note: "User-added London coffee and gelato stop from your latest note.",
+        distance: "New user addition",
+        tags: ["featured", "coffee", "good food"],
+        mapsUrl: "https://maps.app.goo.gl/v8mbhHuqBKoBuAcs7?g_st=ic",
+      },
+      {
+        name: "Monmouth Coffee",
+        address: "27 Monmouth Street, London WC2H 9EU",
+        note: "A London classic for serious coffee, especially if you're around Covent Garden or Soho.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Kaffeine",
+        address: "66 Great Titchfield Street, London W1W 7QJ",
+        note: "One of Fitzrovia's benchmark specialty coffee shops and still a go-to for central London coffee runs.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Rosslyn Coffee",
+        address: "78 Queen Victoria Street, London EC4N 4SJ",
+        note: "Award-winning City coffee shop that regularly shows up in serious best-in-London lists.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Ozone Coffee",
+        address: "11 Leonard Street, London EC2A 4AQ",
+        note: "Shoreditch specialty coffee staple with brunch strength and a polished warehouse feel.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Prufrock Coffee",
+        address: "23-25 Leather Lane, London EC1N 7TE",
+        note: "Leather Lane favorite and one of London's most respected barista-driven coffee spots.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Allpress Espresso Dalston",
+        address: "55 Dalston Lane, London E8 2NG",
+        note: "Dalston roastery café with a big open room and consistently strong espresso.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Batch Baby",
+        address: "The Rose Lipman Building, 43 De Beauvoir Road, London N1 5SF",
+        note: "Award-winning De Beauvoir neighborhood cafe with a warmer, slower sit-down feel.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Formative Coffee",
+        address: "Butler Place, London SW1H 0RH",
+        note: "Sharp modern coffee spot tucked between Westminster and Victoria for a cleaner specialty stop.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Qima Cafe",
+        address: "21 Warren Street, London W1T 5LT",
+        note: "Fitzrovia coffee-and-patisserie stop known for higher-end beans and pastry game.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "WatchHouse Bermondsey",
+        address: "199 Bermondsey Street, London SE1 3UW",
+        note: "Modern coffee heavyweight with an especially good Bermondsey base if you're around south of the river.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Covent Garden Grind",
+        address: "42 Maiden Lane, London WC2E 7LJ",
+        note: "Very central Covent Garden coffee stop, perfect if you're bouncing around theatreland or the West End.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Soho Grind",
+        address: "19 Beak Street, London W1F 9RP",
+        note: "High-traffic Soho coffee stop that fits naturally into a central London pub or sightseeing day.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Waterloo Grind",
+        address: "Unit 15 The Balcony, Waterloo Station, London SE1 7LY",
+        note: "Easy South Bank and station coffee option in one of London's heaviest foot-traffic areas.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
     ],
   },
   Liverpool: {
@@ -570,6 +741,55 @@ const cityContent = {
         distance: "Duke Street",
         tags: ["recommended", "good guinness", "good food"],
       },
+      {
+        name: "Bold Street Coffee",
+        address: "89 Bold Street, Liverpool L1 4GD",
+        note: "A Liverpool staple for specialty coffee, brunch, and a central Bold Street caffeine reset.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "92 Degrees Coffee",
+        address: "24 Hardman Street, Liverpool L1 9AX",
+        note: "Liverpool-founded specialty coffee roaster with a strong Georgian Quarter base.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Mother Espresso",
+        address: "82 Wood Street, Liverpool L1 4DQ",
+        note: "Ropewalks coffee favorite with a minimalist room and a properly coffee-first menu.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "200 Degrees Coffee",
+        address: "17-19 Bold Street, Liverpool L1 4DN",
+        note: "Strong central Liverpool coffee option right on Bold Street with a bigger all-day cafe feel.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Neighbourhood Coffee",
+        address: "Unit 22, The Sandon Estate, Sandon Way, Liverpool L5 9YN",
+        note: "Liverpool roastery-driven coffee pick if you want a more serious beans-and-brewing stop.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Rococo Coffee House",
+        address: "61 Lord Street, Liverpool L2 1TA",
+        note: "Right off the main retail core, so it works well for a central Liverpool coffee stop.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
+      {
+        name: "Lovelocks Coffee Shop",
+        address: "27 Old Haymarket, Liverpool L1 6ER",
+        note: "Good central option near Lime Street and the main hotel and station flow.",
+        distance: "Coffee stop",
+        tags: ["coffee"],
+      },
     ],
   },
 };
@@ -625,6 +845,20 @@ const spotAreas = {
     "Sawyers Arms": "Paddington",
     "The Bear": "Paddington",
     "The Cleveland Arms": "Paddington",
+    "The Cheese Barge": "Paddington",
+    "The Waterway": "Little Venice",
+    "Post Work Pub": "London",
+    "Coffee / Gelato Stop": "London",
+    "Monmouth Coffee": "Covent Garden",
+    Kaffeine: "Fitzrovia",
+    "Rosslyn Coffee": "City of London",
+    "Ozone Coffee": "Shoreditch",
+    "Prufrock Coffee": "Leather Lane",
+    "Allpress Espresso Dalston": "Dalston",
+    "Batch Baby": "De Beauvoir",
+    "Formative Coffee": "Westminster",
+    "Qima Cafe": "Fitzrovia",
+    "WatchHouse Bermondsey": "Bermondsey",
   },
   Oxford: {
     "The Fir Tree": "Iffley Road",
@@ -650,6 +884,11 @@ const spotAreas = {
     "The Gardener's Arms": "Plantation Road",
     "The Bookbinders": "Jericho",
     "Moo Moos Milkshakes": "Cowley Road",
+    "Missing Bean": "City Centre",
+    "Jericho Coffee Traders": "High Street",
+    "Society Cafe": "City Centre",
+    "Common Ground": "Jericho",
+    "NewGround Coffee": "City Centre",
     "The Bear Inn": "City Centre",
     "The Grapes": "George Street",
     "The Perch": "Binsey",
@@ -676,6 +915,11 @@ const spotAreas = {
     "The Bridewell": "Campbell Square",
     "White Hart": "Hope Street",
     "The Monro": "Duke Street",
+    "Bold Street Coffee": "Bold Street",
+    "92 Degrees Coffee": "Hardman Street",
+    "Mother Espresso": "Ropewalks",
+    "200 Degrees Coffee": "Bold Street",
+    "Neighbourhood Coffee": "Sandon",
   },
 };
 
@@ -688,7 +932,9 @@ const filters = [
 ];
 
 const modes = [
-  { key: "guide", label: "Pub Guide" },
+  { key: "guide", label: "Pubs" },
+  { key: "randomizer", label: "Pub Randomizer" },
+  { key: "coffee", label: "Coffee" },
   { key: "itinerary", label: "Trip Itinerary" },
 ];
 
@@ -701,29 +947,43 @@ const itineraryDays = [
   {
     date: "Saturday, April 18",
     city: "London",
+    items: ["Picnic party", "Bar night"],
+  },
+  {
+    date: "Sunday, April 19",
+    city: "London",
     items: [
+      "Strawberry walking tour: Tower of London tour 10:00, 2-3 hours",
+      "St. Paul's Cathedral",
+      "London Bridge",
+      "Tower of London",
+      "Tower Bridge",
+      "Bermondsey Beer Mile",
+      "Sunday roast at Blacklock 5:45pm",
+      "Bars",
+    ],
+  },
+  {
+    date: "Monday, April 20",
+    city: "London",
+    items: [
+      "Strawberry walking tour: London Westminster 10:30, 2 hours",
       "Buckingham Palace",
       "Changing of the Guard at 10:45",
       "Westminster Abbey",
       "Big Ben",
       "London Eye / river cruise",
-      "Power nap",
-      "Savoy Grill (Gordon Ramsay restaurant, beef Wellington)",
+      "Tate Modern",
+      "Borough Market",
+      "Notting Hill market",
+      "Camden Market to get darts match outfit",
+      "Savoy Grill / Bread Street (Gordon Ramsay, beef Wellington)",
+      "Piccadilly Circus",
     ],
   },
   {
-    date: "Sunday, April 19",
-    city: "London",
-    items: ["Sunday roast at Blacklock"],
-  },
-  {
-    date: "Monday, April 20",
-    city: "London",
-    items: ["Notting Hill market"],
-  },
-  {
     date: "Tuesday, April 21",
-    city: "London > Oxford",
+    city: "Oxford",
     items: ["Bus from London", "Bars near Cesario", "Soccer match", "Late night at Half Moon and Glamorous"],
   },
   {
@@ -740,8 +1000,8 @@ const itineraryDays = [
   },
   {
     date: "Thursday, April 23",
-    city: "Oxford > Liverpool",
-    items: ["Pick up rental car", "Drive to Liverpool", "Darts match"],
+    city: "Liverpool",
+    items: ["Drive from Oxford", "Darts match"],
   },
   {
     date: "Friday, April 24",
@@ -750,31 +1010,44 @@ const itineraryDays = [
   },
   {
     date: "Saturday, April 25",
-    city: "Liverpool > Oxford",
-    items: ["Crown Hotel", "Drive from Liverpool", "Drop off rental car", "Bar to watch soccer"],
+    city: "Oxford (Crown Hotel)",
+    items: ["Drive from Liverpool", "Bar to watch soccer"],
   },
   {
     date: "Sunday, April 26",
-    city: "Oxford > London",
+    city: "Flight home",
     items: ["Bus to airport", "Flight home"],
   },
 ];
 
 const itineraryMapQueries = {
+  "Strawberry walking tour: Tower of London tour 10:00, 2-3 hours":
+    "Tower of London, London EC3N 4AB, UK",
+  "St. Paul's Cathedral": "St. Paul's Cathedral, St. Paul's Churchyard, London EC4M 8AD, UK",
+  "London Bridge": "London Bridge, London SE1 9DD, UK",
+  "Tower of London": "Tower of London, London EC3N 4AB, UK",
+  "Tower Bridge": "Tower Bridge, Tower Bridge Road, London SE1 2UP, UK",
+  "Bermondsey Beer Mile": "Bermondsey Beer Mile, Bermondsey, London SE1, UK",
+  "Sunday roast at Blacklock 5:45pm": "Blacklock Soho, 24 Great Windmill Street, London W1D 7LG, UK",
+  "Strawberry walking tour: London Westminster 10:30, 2 hours": "Westminster Abbey, Dean's Yard, London SW1P 3PA, UK",
   "Buckingham Palace": "Buckingham Palace, London SW1A 1AA, UK",
   "Changing of the Guard at 10:45": "Buckingham Palace, London SW1A 1AA, UK",
   "Westminster Abbey": "Westminster Abbey, Dean's Yard, London SW1P 3PA, UK",
   "Big Ben": "Big Ben, London SW1A 0AA, UK",
   "London Eye / river cruise": "London Eye, Riverside Building, County Hall, London SE1 7PB, UK",
-  "Savoy Grill (Gordon Ramsay restaurant, beef Wellington)":
+  "Savoy Grill / Bread Street (Gordon Ramsay, beef Wellington)":
     "Savoy Grill, The Savoy, Strand, London WC2R 0EZ, UK",
-  "Sunday roast at Blacklock": "Blacklock Soho, 24 Great Windmill Street, London W1D 7LG, UK",
+  "Tate Modern": "Tate Modern, Bankside, London SE1 9TG, UK",
+  "Borough Market": "Borough Market, 8 Southwark Street, London SE1 1TL, UK",
   "Notting Hill market": "Portobello Road Market, London W11 1LJ, UK",
+  "Camden Market to get darts match outfit": "Camden Market, Camden Lock Place, London NW1 8AF, UK",
+  "Piccadilly Circus": "Piccadilly Circus, London W1J 9HS, UK",
   "Soccer match": "Kassam Stadium, Grenoble Road, Oxford OX4 4XP, UK",
   "Late night at Half Moon and Glamorous": "Half Moon, 17-18 St Clement's Street, Oxford OX4 1AB, UK",
   Punting: "Magdalen Bridge Boathouse, High Street, Oxford OX1 4AU, UK",
   "Maybe drunk museum drop-in": "Oxford University Museum of Natural History, Parks Road, Oxford OX1 3PW, UK",
   "Flight Club": "Flight Club Oxford, Westgate Centre, Oxford OX1 1NZ, UK",
+  "Darts match": "M&S Bank Arena Liverpool, King's Dock, Liverpool L3 4FP, UK",
   "Beatles Museum": "The Beatles Story Museum, Britannia Vaults, Albert Dock, Liverpool L3 4AD, UK",
   "Cavern Club": "Cavern Club, 10 Mathew Street, Liverpool L2 6RE, UK",
 };
@@ -783,6 +1056,9 @@ const state = {
   mode: "guide",
   city: "London",
   activeFilters: new Set(),
+  randomizerRotation: 0,
+  randomizerPick: null,
+  randomizerSpinning: false,
 };
 
 const modeTabs = document.querySelector("#modeTabs");
@@ -802,7 +1078,23 @@ const guideView = document.querySelector("#guideView");
 const citySection = document.querySelector("#citySection");
 const itineraryView = document.querySelector("#itineraryView");
 const itineraryGrid = document.querySelector("#itineraryGrid");
+const randomizerView = document.querySelector("#randomizerView");
+const randomizerWheel = document.querySelector("#randomizerWheel");
+const randomizerCity = document.querySelector("#randomizerCity");
+const randomizerResult = document.querySelector("#randomizerResult");
+const randomizerNote = document.querySelector("#randomizerNote");
+const randomizerSpin = document.querySelector("#randomizerSpin");
+const randomizerMapLink = document.querySelector("#randomizerMapLink");
 const mapState = {};
+const hasRandomizerUi = Boolean(
+  randomizerView &&
+    randomizerWheel &&
+    randomizerCity &&
+    randomizerResult &&
+    randomizerNote &&
+    randomizerSpin &&
+    randomizerMapLink,
+);
 
 function titleCase(tag) {
   if (tag === "featured") {
@@ -864,6 +1156,10 @@ function getTagMarkup(tag) {
 }
 
 function getGoogleMapsLink(spot) {
+  if (spot.mapsUrl) {
+    return spot.mapsUrl;
+  }
+
   const query = encodeURIComponent(`${spot.name}, ${spot.address}`);
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
@@ -885,20 +1181,25 @@ function getAllCitySpots(city) {
   return cityContent[city].spots.filter((spot) => !spot.name.toLowerCase().includes("milkshake"));
 }
 
-function getGeocodeKey(city, spot) {
-  return `blimeyboys:${city}:${spot.name}:${spot.address}`;
+function getRandomizerSpots(city) {
+  return getAllCitySpots(city).filter((spot) => !spot.tags.includes("coffee"));
 }
 
-async function geocodeSpot(city, spot) {
-  const cacheKey = getGeocodeKey(city, spot);
-  const cached = window.localStorage.getItem(cacheKey);
-  if (cached) {
-    return JSON.parse(cached);
-  }
+function getCoffeeSpots(city) {
+  return getAllCitySpots(city).filter((spot) => spot.tags.includes("coffee"));
+}
 
-  const query = encodeURIComponent(`${spot.name}, ${spot.address}, ${city}, UK`);
+function getPubSpots(city) {
+  return getAllCitySpots(city).filter((spot) => !spot.tags.includes("coffee"));
+}
+
+function getGeocodeKey(city, spot) {
+  return `blimeyboys:v2:${city}:${spot.name}:${spot.address}`;
+}
+
+async function geocodeQuery(query) {
   const response = await fetch(
-    `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=gb&q=${query}`,
+    `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=gb&q=${encodeURIComponent(query)}`,
     {
       headers: {
         Accept: "application/json",
@@ -915,12 +1216,52 @@ async function geocodeSpot(city, spot) {
     return null;
   }
 
-  const point = {
+  return {
     lat: Number(results[0].lat),
     lon: Number(results[0].lon),
   };
-  window.localStorage.setItem(cacheKey, JSON.stringify(point));
-  return point;
+}
+
+async function geocodeSpot(city, spot) {
+  const cacheKey = getGeocodeKey(city, spot);
+  const cached = window.localStorage.getItem(cacheKey);
+  if (cached) {
+    return JSON.parse(cached);
+  }
+
+  const queries = [
+    `${spot.name}, ${spot.address}, ${city}, UK`,
+    `${spot.address}, ${city}, UK`,
+    `${spot.name}, ${city}, UK`,
+  ];
+
+  for (const query of queries) {
+    const point = await geocodeQuery(query);
+    if (point) {
+      window.localStorage.setItem(cacheKey, JSON.stringify(point));
+      return point;
+    }
+  }
+
+  return null;
+}
+
+function getFallbackPoint(city, index) {
+  const fallbackCenters = {
+    London: [51.5132, -0.1316],
+    Oxford: [51.7537, -1.2584],
+    Liverpool: [53.4067, -2.9876],
+  };
+  const [lat, lon] = fallbackCenters[city] || cityMapConfig[city].center;
+  const ring = Math.floor(index / 8) + 1;
+  const angle = (index % 8) * (Math.PI / 4);
+  const latOffset = Math.sin(angle) * 0.006 * ring;
+  const lonOffset = Math.cos(angle) * 0.01 * ring;
+
+  return {
+    lat: lat + latOffset,
+    lon: lon + lonOffset,
+  };
 }
 
 function buildPopupHtml(spot) {
@@ -985,6 +1326,10 @@ function renderModeTabs() {
   modeTabs.innerHTML = "";
 
   modes.forEach((mode) => {
+    if (mode.key === "randomizer" && !hasRandomizerUi) {
+      return;
+    }
+
     const button = document.createElement("button");
     button.type = "button";
     button.className = `pill-button mode-button ${mode.key === state.mode ? "active" : ""}`;
@@ -1005,15 +1350,15 @@ async function populateMaps() {
       continue;
     }
 
-    const bounds = [];
-    const spots = getAllCitySpots(city);
+    mapEntry.markers.forEach((marker) => marker.remove());
+    mapEntry.markers = [];
 
-    for (const spot of spots) {
+    const bounds = [];
+    const spots = state.mode === "coffee" ? getCoffeeSpots(city) : getPubSpots(city);
+
+    for (const [index, spot] of spots.entries()) {
       try {
-        const point = await geocodeSpot(city, spot);
-        if (!point) {
-          continue;
-        }
+        const point = (await geocodeSpot(city, spot)) || getFallbackPoint(city, index);
 
         const marker = window.L.marker([point.lat, point.lon], {
           icon: createDotMarker(),
@@ -1031,6 +1376,8 @@ async function populateMaps() {
         padding: [24, 24],
         maxZoom: cityMapConfig[city].zoom + 1,
       });
+    } else {
+      mapEntry.map.setView(cityMapConfig[city].center, cityMapConfig[city].zoom);
     }
   }
 }
@@ -1136,8 +1483,87 @@ function renderItinerary() {
   });
 }
 
+function buildWheelGradient(spots) {
+  if (!spots.length) {
+    return "conic-gradient(#153421 0deg 360deg)";
+  }
+
+  const colors = ["#f3d56b", "#00a7e1", "#8ad67e", "#e8624a", "#85592e", "#e58cff"];
+  const step = 360 / spots.length;
+
+  return `conic-gradient(${spots
+    .map((_, index) => {
+      const start = (index * step).toFixed(2);
+      const end = ((index + 1) * step).toFixed(2);
+      const color = colors[index % colors.length];
+      return `${color} ${start}deg ${end}deg`;
+    })
+    .join(", ")})`;
+}
+
+function renderRandomizer() {
+  if (!hasRandomizerUi) {
+    return;
+  }
+
+  const spots = getRandomizerSpots(state.city);
+  randomizerCity.textContent = state.city;
+  randomizerWheel.style.background = buildWheelGradient(spots);
+  randomizerWheel.style.transform = `rotate(${state.randomizerRotation}deg)`;
+
+  if (!spots.length) {
+    randomizerResult.textContent = `No pub picks ready for ${state.city}.`;
+    randomizerNote.textContent = "Try a different city.";
+    randomizerSpin.disabled = true;
+    randomizerMapLink.classList.add("hidden-view");
+    return;
+  }
+
+  randomizerSpin.disabled = state.randomizerSpinning;
+  randomizerSpin.textContent = state.randomizerSpinning ? "Spinning..." : "Spin the Wheel";
+
+  if (state.randomizerPick) {
+    randomizerResult.textContent = state.randomizerPick.name;
+    randomizerNote.textContent = state.randomizerPick.note;
+    randomizerMapLink.href = getGoogleMapsLink(state.randomizerPick);
+    randomizerMapLink.classList.remove("hidden-view");
+  } else {
+    randomizerResult.textContent = "Tap spin for a pub pick.";
+    randomizerNote.textContent = "The wheel only uses pub and bar spots from the selected city.";
+    randomizerMapLink.classList.add("hidden-view");
+  }
+}
+
+function spinRandomizer() {
+  if (!hasRandomizerUi) {
+    return;
+  }
+
+  const spots = getRandomizerSpots(state.city);
+  if (!spots.length || state.randomizerSpinning) {
+    return;
+  }
+
+  const selectedIndex = Math.floor(Math.random() * spots.length);
+  const step = 360 / spots.length;
+  const segmentCenter = selectedIndex * step + step / 2;
+  const target = 360 - segmentCenter;
+  const extraTurns = 360 * (5 + Math.floor(Math.random() * 2));
+
+  state.randomizerSpinning = true;
+  state.randomizerPick = null;
+  state.randomizerRotation += extraTurns + target;
+  renderRandomizer();
+
+  window.setTimeout(() => {
+    state.randomizerSpinning = false;
+    state.randomizerPick = spots[selectedIndex];
+    renderRandomizer();
+  }, 4300);
+}
+
 function getVisibleSpots() {
-  const currentSpots = cityContent[state.city].spots;
+  const currentSpots = state.mode === "coffee" ? getCoffeeSpots(state.city) : getPubSpots(state.city);
 
   if (state.activeFilters.size === 0) {
     return currentSpots;
@@ -1151,13 +1577,17 @@ function getVisibleSpots() {
 function renderSpots() {
   const city = cityContent[state.city];
   const visibleSpots = getVisibleSpots();
+  const allModeSpots = state.mode === "coffee" ? getCoffeeSpots(state.city) : getPubSpots(state.city);
 
-  sectionKicker.textContent = city.kicker;
+  sectionKicker.textContent = state.mode === "coffee" ? "Coffee guide" : city.kicker;
   sectionTitle.textContent = state.city;
-  sectionCopy.textContent = city.description;
+  sectionCopy.textContent =
+    state.mode === "coffee"
+      ? `Coffee-only picks for ${state.city}, separated from the pub map so daytime caffeine stops are easier to scan.`
+      : city.description;
   resultsSummary.textContent =
-    visibleSpots.length === city.spots.length && state.activeFilters.size === 0
-      ? `${city.spots.length} spots ready to browse`
+    visibleSpots.length === allModeSpots.length && state.activeFilters.size === 0
+      ? `${allModeSpots.length} spots ready to browse`
       : `${visibleSpots.length} matching spot${visibleSpots.length === 1 ? "" : "s"}`;
 
   spotGrid.innerHTML = "";
@@ -1200,25 +1630,52 @@ function renderSpots() {
 function render() {
   renderModeTabs();
   renderCityTabs();
-  renderFilterButtons();
+
+  if (state.mode === "randomizer" && !hasRandomizerUi) {
+    state.mode = "guide";
+  }
 
   const isGuide = state.mode === "guide";
-  document.body.classList.toggle("itinerary-mode", !isGuide);
-  guideView.classList.toggle("hidden-view", !isGuide);
-  citySection.classList.toggle("hidden-view", !isGuide);
-  itineraryView.classList.toggle("hidden-view", isGuide);
-  cityTabs.style.display = isGuide ? "flex" : "none";
-  filterBar.style.display = isGuide ? "flex" : "none";
-  cityLabel.style.display = isGuide ? "block" : "none";
-  vibeLabel.style.display = isGuide ? "block" : "none";
-  resultsSummary.style.display = isGuide ? "block" : "none";
-  clearFiltersButton.style.display = isGuide ? "inline-flex" : "none";
+  const isCoffee = state.mode === "coffee";
+  const isItinerary = state.mode === "itinerary";
+  const isRandomizer = state.mode === "randomizer" && hasRandomizerUi;
+  document.body.classList.toggle("itinerary-mode", isItinerary);
+  guideView.classList.toggle("hidden-view", !(isGuide || isCoffee));
+  citySection.classList.toggle("hidden-view", !(isGuide || isCoffee));
+  itineraryView.classList.toggle("hidden-view", !isItinerary);
+  if (randomizerView) {
+    randomizerView.classList.toggle("hidden-view", !isRandomizer);
+  }
+  cityTabs.style.display = isGuide || isCoffee || isRandomizer ? "flex" : "none";
+  cityLabel.style.display = isGuide || isCoffee || isRandomizer ? "block" : "none";
 
   if (isGuide) {
+    renderFilterButtons();
+    filterBar.style.display = "flex";
+    vibeLabel.style.display = "block";
+    resultsSummary.style.display = "block";
+    clearFiltersButton.style.display = "inline-flex";
+  } else if (isCoffee) {
+    filterBar.innerHTML = "";
+    filterBar.style.display = "none";
+    vibeLabel.style.display = "none";
+    resultsSummary.style.display = "block";
+    clearFiltersButton.style.display = "none";
+  } else {
+    filterBar.style.display = "none";
+    vibeLabel.style.display = "none";
+    resultsSummary.style.display = "none";
+    clearFiltersButton.style.display = "none";
+  }
+
+  if (isGuide || isCoffee) {
     renderMaps();
     renderSpots();
-  } else {
+    populateMaps();
+  } else if (isItinerary) {
     renderItinerary();
+  } else {
+    renderRandomizer();
   }
 }
 
@@ -1226,6 +1683,10 @@ clearFiltersButton.addEventListener("click", () => {
   state.activeFilters.clear();
   render();
 });
+
+if (randomizerSpin) {
+  randomizerSpin.addEventListener("click", spinRandomizer);
+}
 
 render();
 createMap();
